@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bitget 即時強弱雷達</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#eef1f4; --surface:#fff; --surface2:#f7f9fb; --surface3:#eaeef2;
+  --ink:#161b24; --ink2:#3c4654; --muted:#6b7686;
+  --rule:#d3dae2; --rule2:#e6ebf0;
+  --amber:#9a5a0b; --amber-fill:#e8c98c;
+  --long:#0d6354; --long-fill:#9dcfc4;
+  --short:#95292c; --short-fill:#e6b3b3;
+  --slate:#2f4a6b; --flat:#8b93a0;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0e1319; --surface:#161d26; --surface2:#1c242f; --surface3:#232c38;
+  --ink:#e6eaf0; --ink2:#c2cbd6; --muted:#8b97a6;
+  --rule:#2b3542; --rule2:#212a35;
+  --amber:#e4ab5c; --amber-fill:#6d4c1c;
+  --long:#5cc6ab; --long-fill:#1c4a41;
+  --short:#e58585; --short-fill:#5e2a2c;
+  --slate:#8fb0d4; --flat:#6b7686;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#0e1319; --surface:#161d26; --surface2:#1c242f; --surface3:#232c38;
+  --ink:#e6eaf0; --ink2:#c2cbd6; --muted:#8b97a6;
+  --rule:#2b3542; --rule2:#212a35;
+  --amber:#e4ab5c; --amber-fill:#6d4c1c;
+  --long:#5cc6ab; --long-fill:#1c4a41;
+  --short:#e58585; --short-fill:#5e2a2c;
+  --slate:#8fb0d4; --flat:#6b7686;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:"Archivo","Helvetica Neue","PingFang TC","Noto Sans TC",sans-serif;
+  font-size:14px; line-height:1.5; -webkit-text-size-adjust:100%;
+}
+.mono,td.n,.score-n,.px{font-family:"IBM Plex Mono",ui-monospace,monospace; font-variant-numeric:tabular-nums;}
+.wrap{max-width:1400px; margin:0 auto; padding-inline:16px; padding-block:20px 48px;}
+
+header{display:flex; flex-wrap:wrap; align-items:flex-end; gap:12px 24px; padding-bottom:14px; border-bottom:2px solid var(--ink);}
+h1{font-size:clamp(20px,3.4vw,28px); font-weight:700; letter-spacing:-.02em; margin:0;}
+.sub{font-size:12px; color:var(--muted); font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums;}
+.dot{display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--flat); margin-right:5px; vertical-align:middle;}
+.dot.live{background:var(--long); animation:pulse 2s ease-in-out infinite;}
+.dot.err{background:var(--short);}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.dot.live{animation:none}}
+
+.note{background:var(--surface); border:1px solid var(--rule); border-left:3px solid var(--amber); padding:12px 14px; margin:14px 0; font-size:13px; color:var(--ink2); max-width:110ch;}
+.note b{color:var(--ink)}
+
+.bar{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:14px 0;}
+.seg{display:flex; border:1px solid var(--rule); background:var(--surface); overflow:hidden;}
+.seg button{appearance:none; border:none; background:transparent; color:var(--ink2); font:inherit; font-size:12.5px; font-weight:600; padding:7px 11px; cursor:pointer; border-right:1px solid var(--rule2);}
+.seg button:last-child{border-right:none}
+.seg button[aria-pressed="true"]{background:var(--slate); color:var(--surface);}
+.seg button:focus-visible{outline:2px solid var(--amber); outline-offset:-2px;}
+input[type=search]{font:inherit; font-size:13px; padding:7px 10px; border:1px solid var(--rule); background:var(--surface); color:var(--ink); min-width:130px;}
+input[type=search]:focus-visible{outline:2px solid var(--amber); outline-offset:-1px;}
+.lbl{font-size:10.5px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--muted);}
+
+.tblbox{overflow-x:auto; border:1px solid var(--rule); background:var(--surface);}
+table{border-collapse:collapse; width:100%; min-width:1050px; font-size:13px;}
+thead th{position:sticky; top:0; z-index:2; background:var(--surface2); font-size:10.5px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; color:var(--muted); text-align:right; padding:9px 8px; border-bottom:1px solid var(--rule); white-space:nowrap; cursor:pointer; user-select:none;}
+thead th:first-child,tbody td:first-child{text-align:left; padding-left:12px; position:sticky; left:0; background:var(--surface2); z-index:1;}
+tbody td:first-child{background:var(--surface);}
+thead th[aria-sort]{color:var(--ink);}
+thead th.nosort{cursor:default}
+tbody td{padding:7px 8px; border-bottom:1px solid var(--rule2); text-align:right; white-space:nowrap;}
+tbody tr.pin td:first-child{box-shadow:inset 3px 0 0 var(--amber);}
+tbody tr:hover td{background:var(--surface2);}
+tbody tr:hover td:first-child{background:var(--surface3);}
+tbody tr.open td{background:var(--surface3);}
+
+a.sym{font-family:"IBM Plex Mono",monospace; font-weight:600; font-size:13.5px; color:var(--ink); text-decoration:none; border-bottom:1px dotted var(--muted);}
+a.sym:hover{color:var(--amber); border-bottom-color:var(--amber);}
+a.sym:focus-visible{outline:2px solid var(--amber); outline-offset:2px;}
+.tag{font-size:9.5px; font-weight:600; letter-spacing:.06em; padding:1px 4px; margin-left:5px; border-radius:2px; background:var(--amber-fill); color:var(--amber); vertical-align:1px;}
+
+.score{display:flex; align-items:center; gap:7px; justify-content:flex-end;}
+.score-n{font-size:15px; font-weight:600; min-width:26px; text-align:right;}
+.strack{display:block; width:56px; height:8px; background:var(--rule2); flex:none;}
+.sfill{display:block; height:100%; min-width:2px; border-radius:0 3px 3px 0;}
+.sfill.L{background:var(--long)} .sfill.S{background:var(--short)} .sfill.N{background:var(--flat)}
+.dirchip{display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.04em; padding:2px 6px; border-radius:2px; min-width:34px; text-align:center;}
+.dirchip.L{background:var(--long-fill); color:var(--long)}
+.dirchip.S{background:var(--short-fill); color:var(--short)}
+.dirchip.N{background:var(--rule2); color:var(--muted)}
+.up{color:var(--long)} .dn{color:var(--short)} .dim{color:var(--muted)}
+.na{color:var(--muted); font-size:11.5px;}
+
+.mini{display:inline-block; width:44px; height:7px; background:var(--rule2); position:relative; vertical-align:middle; margin-left:6px;}
+.mini i{position:absolute; top:0; bottom:0; display:block;}
+.mini .mid{left:50%; width:1px; background:var(--muted); opacity:.5; top:-2px; bottom:-2px;}
+.exp{appearance:none; border:1px solid var(--rule); background:var(--surface2); color:var(--muted); font:inherit; font-size:11px; padding:1px 6px; cursor:pointer; border-radius:2px;}
+.exp:hover{color:var(--ink); border-color:var(--muted);}
+tr.detail td{background:var(--surface2) !important; text-align:left; white-space:normal; padding:0; border-bottom:2px solid var(--rule);}
+.dwrap{padding:14px 16px; display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:14px;}
+.dbox{border:1px solid var(--rule2); background:var(--surface); padding:11px 12px;}
+.dbox h4{margin:0 0 7px; font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--muted);}
+.krow{display:flex; justify-content:space-between; gap:10px; font-size:12.5px; padding:2px 0;}
+.krow span:last-child{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; font-weight:500;}
+.cmp{display:grid; grid-template-columns:1fr 46px 34px; align-items:center; gap:7px; font-size:12px; padding:2.5px 0;}
+.cmp .ct{width:100%; height:7px; background:var(--rule2); position:relative;}
+.cmp .cf{position:absolute; top:0; bottom:0;}
+.cmp .cv{font-family:"IBM Plex Mono",monospace; font-size:11.5px; text-align:right; font-variant-numeric:tabular-nums;}
+.empty{padding:34px 16px; text-align:center; color:var(--muted); font-size:13px;}
+footer{margin-top:26px; padding-top:16px; border-top:1px solid var(--rule); font-size:12px; color:var(--muted); max-width:110ch;}
+footer p{margin:0 0 8px}
+kbd{font-family:"IBM Plex Mono",monospace; font-size:11px; background:var(--surface3); border:1px solid var(--rule); padding:0 4px; border-radius:2px;}
+/* ---- 手機卡片版 ---- */
+#cards{display:none}
+.card{border:1px solid var(--rule); background:var(--surface); margin-bottom:8px;}
+.card.pin{border-left:3px solid var(--amber);}
+.chead{display:flex; align-items:center; gap:9px; padding:10px 12px; border-bottom:1px solid var(--rule2);}
+.chead .sym{font-size:15px}
+.chead .grow{flex:1}
+.cgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--rule2);}
+.cg{background:var(--surface); padding:8px 10px; min-width:0;}
+.cg dt{font-size:9.5px; font-weight:600; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); margin-bottom:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.cg dd{margin:0; font-family:"IBM Plex Mono",monospace; font-size:12.5px; font-weight:500; font-variant-numeric:tabular-nums; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.cfoot{padding:7px 12px; border-top:1px solid var(--rule2); display:flex; justify-content:space-between; align-items:center; gap:8px;}
+.cdet{border-top:1px solid var(--rule); background:var(--surface2);}
+.cdet .dwrap{grid-template-columns:1fr; padding:12px;}
+@media (max-width:760px){
+  .tblbox{display:none}
+  #cards{display:block}
+  .bar{gap:6px}
+  .seg button{padding:6px 9px; font-size:12px}
+  .lbl{width:100%; margin-bottom:-2px}
+  input[type=search]{flex:1; min-width:0}
+}
+@media (max-width:640px){ .wrap{padding-block:14px 32px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div>
+    <h1>Bitget 即時強弱雷達</h1>
+    <div class="sub" id="status"><span class="dot" id="dot"></span><span id="stxt">準備中…</span></div>
+  </div>
+  <div class="sub" id="ref">熱門前 50 依 24h 成交額排序，外加 CL / NATGAS / MU 三支常用幣對</div>
+</header>
+
+<div class="note">
+  <b>這是掃描器，不是三層判定。</b>它讀的是「當下的部位與流向」——相對強度、買賣盤壓、資金費率、散戶多空、量能——用來從 53 支裡<b>縮小到 3～5 支值得細看的</b>。它<b>不產出限價／停損／目標／部位</b>：那要跑三層判定，而且這些幣種的空間閘門（ROOM）還沒校準。推薦指數高只代表「現在值得看」，不代表「現在可以進」。
+</div>
+
+<div class="bar">
+  <span class="lbl">排序</span>
+  <div class="seg" id="sortSeg">
+    <button data-k="score" aria-pressed="true">推薦指數</button>
+    <button data-k="vol" aria-pressed="false">成交額</button>
+    <button data-k="chg" aria-pressed="false">24h 漲跌</button>
+    <button data-k="rs" aria-pressed="false">相對強度</button>
+    <button data-k="fr" aria-pressed="false">資金費率</button>
+  </div>
+  <span class="lbl">方向</span>
+  <div class="seg" id="dirSeg">
+    <button data-d="all" aria-pressed="true">全部</button>
+    <button data-d="L" aria-pressed="false">偏多</button>
+    <button data-d="S" aria-pressed="false">偏空</button>
+  </div>
+  <span class="lbl">刷新</span>
+  <div class="seg" id="intSeg">
+    <button data-i="0" aria-pressed="false">手動</button>
+    <button data-i="15" aria-pressed="true">15s</button>
+    <button data-i="30" aria-pressed="false">30s</button>
+    <button data-i="60" aria-pressed="false">60s</button>
+  </div>
+  <div class="seg"><button id="now">立即刷新</button></div>
+  <input type="search" id="q" placeholder="搜尋幣種…" aria-label="搜尋幣種">
+</div>
+
+<div class="tblbox">
+<table>
+  <thead><tr>
+    <th data-k="sym">幣種</th>
+    <th data-k="score" aria-sort="descending">推薦指數</th>
+    <th data-k="price" class="nosort">現價</th>
+    <th data-k="chg">24h</th>
+    <th data-k="rs">相對強度<br>vs BTC / ETH</th>
+    <th data-k="flow">買方主導<br>盤口 / 24h位置</th>
+    <th data-k="fr">資金費率<br>年化</th>
+    <th data-k="ls">散戶情緒<br>多倉帳戶比</th>
+    <th data-k="vol">24h 成交額</th>
+    <th data-k="oi">未平倉</th>
+    <th class="nosort"></th>
+  </tr></thead>
+  <tbody id="tb"><tr><td colspan="11" class="empty">載入中…</td></tr></tbody>
+</table>
+</div>
+<div id="cards"></div>
+
+<footer>
+  <p><b>推薦指數怎麼算</b>：五個成分各自標準化到 −1…+1，加權後取絕對值 ×「流動性信心」×100。相對強度 0.26、買方主導 0.20（區間位置 0.65 ＋ 盤口 0.35）、資金費率 0.16（<b>反向</b>）、散戶情緒 0.16（<b>反向</b>）、24h 動能 0.14、量能轉手 0.08。資金費率與散戶情緒刻意做成反向：<b>費率越正、散戶越擠在多方，對做多越不利</b>。成分缺值時權重會重新歸一化，不會被當成 0 拖低分數。指數 &lt;25 一律標「觀望」。</p>
+  <p><b>流動性信心</b>：以 24h 成交額取對數縮放到 0.30–1.00。成交額 1M USDT 約 0.30、100M 以上為 1.00。這讓 NATGAS（約 3M）這種薄流動性標的無法只靠幾個極端讀數衝到高分。</p>
+  <p><b>已知限制</b>：① CL / NATGAS / MU 的 <span class="mono">fundingRate</span> 恆為 <span class="mono">0</span>（傳統市場永續沒有資金費率機制），該成分標為 N/A 並退出加權，不是中性讀數。② 散戶情緒取 <span class="mono">account-long-short</span> 的 1 小時序列最後一筆，是<b>帳戶數</b>比例而非倉位金額比例。③ 「買方主導」由兩項組成：24h 區間位置佔 0.65、最佳買賣價的掛單量失衡佔 0.35。盤口項刻意壓低權重，因為它是瞬時值、在薄盤上會出現 ±98% 這種極端讀數（實測 CL、MU 就是）；展開列會用最近 100 筆成交的主動買賣量給出更實在的讀數。④ Bitget 的 CDN 會對特定 URL 供應過期快取，本頁每個請求都帶時間戳破快取，但仍會顯示資料時間，<b>請自己確認那個時間是新的</b>。</p>
+  <p>點幣種名稱會開 TradingView 的該幣永續盤面（<span class="mono">BITGET:&lt;SYM&gt;.P</span>）。按 <kbd>展開</kbd> 看成分拆解與主動買賣量。排序、方向、刷新間隔會記在這台瀏覽器裡。</p>
+  <p>資料源：Bitget 公開 API，無需金鑰，本頁不含也不需要任何 API key。此頁為研究工具，不是投資建議。</p>
+</footer>
+</div>
+
+<script>
+"use strict";
+const API="https://api.bitget.com/api/v2/mix/market";
+const PINS=["CLUSDT","NATGASUSDT","MUUSDT"];
+const TOPN=50;
+const W={rs:.26,flow:.20,fr:.16,ls:.16,mom:.14,turn:.08};
+
+const S={rows:[],ls:new Map(),sort:"score",asc:false,dir:"all",q:"",int:15,openSym:null,timer:null,busy:false};
+const $=id=>document.getElementById(id);
+const clamp=(v,a,b)=>v<a?a:v>b?b:v;
+const fmtPx=v=>{const a=Math.abs(v); return a>=1000?v.toLocaleString("en-US",{maximumFractionDigits:2}):a>=1?v.toFixed(3):a>=.01?v.toFixed(4):v.toFixed(6);};
+const pct=(v,d=2)=>(v>0?"+":"")+(v*100).toFixed(d)+"%";
+const money=v=>v>=1e9?(v/1e9).toFixed(2)+"B":v>=1e6?(v/1e6).toFixed(1)+"M":v>=1e3?(v/1e3).toFixed(0)+"K":v.toFixed(0);
+const cls=v=>v>0?"up":v<0?"dn":"dim";
+function store(k,v){try{if(v===undefined)return localStorage.getItem("br_"+k);localStorage.setItem("br_"+k,v);}catch(e){return null;}}
+
+async function jget(path){
+  const u=API+path+(path.includes("?")?"&":"?")+"_t="+Date.now();
+  const r=await fetch(u,{cache:"no-store"});
+  if(!r.ok) throw new Error("HTTP "+r.status);
+  const j=await r.json();
+  if(j.code!=="00000") throw new Error(j.msg||("code "+j.code));
+  return j;
+}
+
+function scoreOf(r){
+  const c={}, av={};
+  c.rs=clamp(r.rs/0.04,-1,1); av.rs=1;
+  c.flow=0.35*clamp(r.book,-1,1)+0.65*(clamp(r.pos,0,1)*2-1); av.flow=1;
+  c.mom=clamp(r.chg/0.08,-1,1); av.mom=1;
+  if(r.hasFr){ c.fr=-clamp(r.fr/0.0004,-1,1); av.fr=1; } else { c.fr=null; av.fr=0; }
+  if(r.ls!=null){ c.ls=-clamp((r.ls-1.6)/1.0,-1,1); av.ls=1; } else { c.ls=null; av.ls=0; }
+  c.turn=clamp((r.turn-1.2)/2.0,-1,1); av.turn=1;
+  let num=0,den=0;
+  for(const k in W){ if(av[k]){ num+=W[k]*c[k]; den+=W[k]; } }
+  const raw=den>0?num/den:0;
+  const conf=clamp(Math.log10(Math.max(r.vol,1)/1e6)/2,0.30,1);
+  const mag=Math.round(Math.abs(raw)*conf*100);
+  return {comp:c, raw, conf, score:mag, dir: mag<25?"N":(raw>0?"L":"S")};
+}
+
+async function loadTickers(){
+  const j=await jget("/tickers?productType=USDT-FUTURES");
+  const all=j.data.filter(d=>d.symbol.endsWith("USDT")&&+d.quoteVolume>0);
+  const bySym=new Map(all.map(d=>[d.symbol,d]));
+  const btc=bySym.get("BTCUSDT"), eth=bySym.get("ETHUSDT");
+  const cB=btc?+btc.change24h:0, cE=eth?+eth.change24h:0;
+  const ranked=all.slice().sort((a,b)=>+b.quoteVolume-+a.quoteVolume);
+  const chosen=[]; const seen=new Set();
+  for(const d of ranked){ if(chosen.length>=TOPN) break; if(PINS.includes(d.symbol)) continue; chosen.push(d); seen.add(d.symbol); }
+  for(const p of PINS){ const d=bySym.get(p); if(d&&!seen.has(p)){ chosen.push(d); seen.add(p); } }
+  const rows=chosen.map(d=>{
+    const last=+d.lastPr, hi=+d.high24h, lo=+d.low24h;
+    const bs=+d.bidSz||0, as=+d.askSz||0;
+    const vol=+d.quoteVolume, oi=(+d.holdingAmount||0)*last;
+    const chg=+d.change24h;
+    const frRaw=d.fundingRate===""||d.fundingRate==null?0:+d.fundingRate;
+    const hasFr=!PINS.includes(d.symbol)&&frRaw!==0;
+    const r={sym:d.symbol, price:last, chg, hi, lo,
+      pos: hi>lo?(last-lo)/(hi-lo):0.5,
+      book: (bs+as)>0?(bs-as)/(bs+as):0,
+      bs, as, fr:frRaw, hasFr, vol, oi,
+      turn: oi>0?vol/oi:0,
+      rs: chg-(cB+cE)/2, rsB: chg-cB, rsE: chg-cE,
+      pin: PINS.includes(d.symbol), ls: S.ls.get(d.symbol)??null};
+    Object.assign(r,scoreOf(r));
+    return r;
+  });
+  S.rows=rows;
+  return {ts:+(btc?btc.ts:Date.now())};
+}
+
+async function loadSentiment(){
+  const syms=S.rows.map(r=>r.sym);
+  let i=0;
+  const worker=async()=>{
+    while(i<syms.length){
+      const s=syms[i++];
+      try{
+        const j=await jget("/account-long-short?symbol="+s+"&period=1h&productType=USDT-FUTURES");
+        const a=j.data; if(Array.isArray(a)&&a.length){ S.ls.set(s,+a[a.length-1].longShortAccountRatio); }
+      }catch(e){}
+    }
+  };
+  await Promise.all(Array.from({length:6},worker));
+  for(const r of S.rows){ r.ls=S.ls.get(r.sym)??null; Object.assign(r,scoreOf(r)); }
+  render();
+}
+
+async function loadFills(sym,box){
+  try{
+    const j=await jget("/fills?symbol="+sym+"&productType=USDT-FUTURES&limit=100");
+    let b=0,s=0,n=0;
+    for(const f of j.data){ const q=(+f.size)*(+f.price); if(f.side==="buy")b+=q; else s+=q; n++; }
+    const t=b+s;
+    box.innerHTML = t>0
+      ? `<div class="krow"><span>主動買入</span><span class="up">${money(b)} USDT</span></div>
+         <div class="krow"><span>主動賣出</span><span class="dn">${money(s)} USDT</span></div>
+         <div class="krow"><span>買方佔比</span><span class="${b>s?'up':'dn'}">${(b/t*100).toFixed(1)}%</span></div>
+         <div class="krow"><span>樣本</span><span>最近 ${n} 筆成交</span></div>`
+      : `<div class="na">無成交資料</div>`;
+  }catch(e){ box.innerHTML=`<div class="na">讀取失敗：${e.message}</div>`; }
+}
+
+function cmpBar(v){
+  if(v==null) return `<div class="ct"></div><span class="cv na">N/A</span>`;
+  const w=Math.abs(v)*50, l=v>=0?50:50-w, col=v>=0?"var(--long)":"var(--short)";
+  return `<div class="ct"><i class="cf" style="left:${l}%;width:${w}%;background:${col}"></i><i class="cf" style="left:50%;width:1px;background:var(--muted);opacity:.5"></i></div><span class="cv">${v>=0?"+":""}${v.toFixed(2)}</span>`;
+}
+function miniBar(v){
+  const w=Math.abs(clamp(v,-1,1))*50, l=v>=0?50:50-w, col=v>=0?"var(--long)":"var(--short)";
+  return `<span class="mini"><i style="left:${l}%;width:${w}%;background:${col}"></i><i class="mid"></i></span>`;
+}
+
+function detailRow(r){
+  const CN={rs:"相對強度",flow:"買方主導",mom:"24h 動能",fr:"資金費率（反向）",ls:"散戶情緒（反向）",turn:"量能轉手"};
+  const comps=Object.keys(W).map(k=>`<div class="cmp"><span>${CN[k]}<span class="dim mono" style="font-size:11px"> ×${W[k].toFixed(2)}</span></span>${cmpBar(r.comp[k])}</div>`).join("");
+  return `<tr class="detail"><td colspan="11"><div class="dwrap">
+    <div class="dbox"><h4>成分拆解（−1 … +1）</h4>${comps}
+      <div class="krow" style="margin-top:8px;border-top:1px solid var(--rule2);padding-top:7px"><span>加權合計</span><span class="${cls(r.raw)}">${r.raw>=0?"+":""}${r.raw.toFixed(3)}</span></div>
+      <div class="krow"><span>流動性信心</span><span>×${r.conf.toFixed(2)}</span></div>
+      <div class="krow"><span>推薦指數</span><span>${r.score}</span></div>
+    </div>
+    <div class="dbox"><h4>主動買賣量</h4><div class="fillsbox" id="fills-${r.sym}"><div class="na">讀取中…</div></div></div>
+    <div class="dbox"><h4>盤口與區間</h4>
+      <div class="krow"><span>最佳買量 / 賣量</span><span>${money(r.bs)} / ${money(r.as)}</span></div>
+      <div class="krow"><span>24h 高 / 低</span><span>${fmtPx(r.hi)} / ${fmtPx(r.lo)}</span></div>
+      <div class="krow"><span>24h 區間位置</span><span>${(r.pos*100).toFixed(0)}%</span></div>
+      <div class="krow"><span>成交額 / 未平倉</span><span>${r.turn.toFixed(2)}×</span></div>
+    </div>
+    <div class="dbox"><h4>相對強度</h4>
+      <div class="krow"><span>本身 24h</span><span class="${cls(r.chg)}">${pct(r.chg)}</span></div>
+      <div class="krow"><span>對 BTC</span><span class="${cls(r.rsB)}">${pct(r.rsB)}</span></div>
+      <div class="krow"><span>對 ETH</span><span class="${cls(r.rsE)}">${pct(r.rsE)}</span></div>
+      <div class="krow"><span>資金費率 / 8h</span><span>${r.hasFr?pct(r.fr,4):'<span class="na">N/A（無此機制）</span>'}</span></div>
+      <div class="krow"><span>散戶多空帳戶比</span><span>${r.ls!=null?r.ls.toFixed(3):'<span class="na">讀取中</span>'}</span></div>
+    </div>
+  </div></td></tr>`;
+}
+
+function render(){
+  const q=S.q.trim().toUpperCase();
+  let rows=S.rows.filter(r=>(!q||r.sym.includes(q))&&(S.dir==="all"||r.dir===S.dir));
+  const key=S.sort;
+  rows.sort((a,b)=>{
+    if(key==="sym") return S.asc?a.sym.localeCompare(b.sym):b.sym.localeCompare(a.sym);
+    const va=key==="ls"?(a.ls??-1):a[key]??0, vb=key==="ls"?(b.ls??-1):b[key]??0;
+    return S.asc?va-vb:vb-va;
+  });
+  const tb=$("tb");
+  if(!rows.length){ tb.innerHTML=`<tr><td colspan="11" class="empty">沒有符合條件的幣種。</td></tr>`; return; }
+  let h="";
+  for(const r of rows){
+    const D={L:"做多",S:"做空",N:"觀望"}[r.dir];
+    h+=`<tr class="${r.pin?"pin":""}${S.openSym===r.sym?" open":""}" data-s="${r.sym}">
+      <td><a class="sym" href="https://www.tradingview.com/chart/?symbol=BITGET%3A${r.sym}.P" target="_blank" rel="noopener">${r.sym.replace(/USDT$/,"")}</a>${r.pin?'<span class="tag">常用</span>':""}</td>
+      <td><div class="score"><span class="dirchip ${r.dir}">${D}</span><span class="strack"><span class="sfill ${r.dir}" style="width:${r.score}%"></span></span><span class="score-n">${r.score}</span></div></td>
+      <td class="n px">${fmtPx(r.price)}</td>
+      <td class="n ${cls(r.chg)}">${pct(r.chg)}</td>
+      <td class="n"><span class="${cls(r.rsB)}">${pct(r.rsB,1)}</span> <span class="dim">/</span> <span class="${cls(r.rsE)}">${pct(r.rsE,1)}</span>${miniBar(r.rs/0.04)}</td>
+      <td class="n"><span class="${cls(r.book)}">${(r.book*100).toFixed(0)}%</span> <span class="dim">/</span> ${(r.pos*100).toFixed(0)}%${miniBar(0.35*r.book+0.65*(r.pos*2-1))}</td>
+      <td class="n">${r.hasFr?`<span class="${r.fr>0?"dn":"up"}">${(r.fr*100).toFixed(4)}%</span> <span class="dim">${(r.fr*1095*100).toFixed(1)}%</span>`:`<span class="na">N/A</span>`}</td>
+      <td class="n">${r.ls!=null?`${(r.ls/(1+r.ls)*100).toFixed(1)}% <span class="dim">${r.ls.toFixed(2)}×</span>`:`<span class="na">…</span>`}</td>
+      <td class="n">${money(r.vol)}</td>
+      <td class="n dim">${money(r.oi)}</td>
+      <td><button class="exp" data-x="${r.sym}">${S.openSym===r.sym?"收起":"展開"}</button></td>
+    </tr>`;
+    if(S.openSym===r.sym) h+=detailRow(r);
+  }
+  tb.innerHTML=h;
+
+  // 手機卡片版（同一份 rows，避免橫向捲動）
+  let cg="";
+  for(const r of rows){
+    const D={L:"做多",S:"做空",N:"觀望"}[r.dir];
+    const fr = r.hasFr?`<span class="${r.fr>0?"dn":"up"}">${(r.fr*100).toFixed(4)}%</span>`:`<span class="na">N/A</span>`;
+    const ls = r.ls!=null?`${(r.ls/(1+r.ls)*100).toFixed(1)}%`:`<span class="na">…</span>`;
+    cg+=`<div class="card ${r.pin?"pin":""}">
+      <div class="chead">
+        <a class="sym" href="https://www.tradingview.com/chart/?symbol=BITGET%3A${r.sym}.P" target="_blank" rel="noopener">${r.sym.replace(/USDT$/,"")}</a>
+        ${r.pin?'<span class="tag">常用</span>':""}
+        <span class="grow"></span>
+        <span class="dirchip ${r.dir}">${D}</span>
+        <span class="strack"><span class="sfill ${r.dir}" style="width:${r.score}%"></span></span>
+        <span class="score-n">${r.score}</span>
+      </div>
+      <div class="cgrid">
+        <div class="cg"><dt>現價</dt><dd>${fmtPx(r.price)}</dd></div>
+        <div class="cg"><dt>24h</dt><dd class="${cls(r.chg)}">${pct(r.chg)}</dd></div>
+        <div class="cg"><dt>vs BTC / ETH %</dt><dd><span class="${cls(r.rsB)}">${(r.rsB*100>=0?"+":"")+(r.rsB*100).toFixed(1)}</span> <span class="dim">/</span> <span class="${cls(r.rsE)}">${(r.rsE*100>=0?"+":"")+(r.rsE*100).toFixed(1)}</span></dd></div>
+        <div class="cg"><dt>買方主導</dt><dd>${(r.book*100).toFixed(0)}% <span class="dim">/</span> ${(r.pos*100).toFixed(0)}%</dd></div>
+        <div class="cg"><dt>資金費率</dt><dd>${fr}</dd></div>
+        <div class="cg"><dt>散戶多倉</dt><dd>${ls}</dd></div>
+      </div>
+      <div class="cfoot">
+        <span class="dim mono" style="font-size:12px">成交額 ${money(r.vol)} · 未平倉 ${money(r.oi)}</span>
+        <button class="exp" data-x="${r.sym}">${S.openSym===r.sym?"收起":"展開"}</button>
+      </div>
+      ${S.openSym===r.sym?`<div class="cdet">${detailRow(r).replace(/^<tr class="detail"><td colspan="11">/,"").replace(/<\/td><\/tr>$/,"")}</div>`:""}
+    </div>`;
+  }
+  document.getElementById("cards").innerHTML=cg;
+
+  if(S.openSym){ for(const b of document.querySelectorAll(".fillsbox")) loadFills(S.openSym,b); }
+}
+
+function setStatus(kind,txt){ const d=$("dot"); d.className="dot"+(kind?" "+kind:""); $("stxt").textContent=txt; }
+
+async function refresh(){
+  if(S.busy) return; S.busy=true;
+  setStatus("live","更新中…");
+  try{
+    const {ts}=await loadTickers();
+    for(const r of S.rows){ r.ls=S.ls.get(r.sym)??null; Object.assign(r,scoreOf(r)); }
+    render();
+    const age=Math.max(0,Math.round((Date.now()-ts)/1000));
+    setStatus(age>120?"err":"live",`${S.rows.length} 支 · 資料時間 ${new Date(ts).toLocaleString("zh-TW",{hour12:false})} · 落後 ${age}s${age>120?" ⚠ 可能是過期快取":""}`);
+  }catch(e){
+    setStatus("err","讀取失敗："+e.message+"　（Failed to fetch 代表瀏覽器發不出請求：可能是網路不通，或這個頁面所在的來源被 Bitget 的 CORS 規則擋下。換行動網路再試一次，仍失敗就需要在前面架一層代理。）");
+  }finally{ S.busy=false; }
+}
+
+function seg(id,attr,cur,fn){
+  $(id).addEventListener("click",e=>{
+    const b=e.target.closest("button[data-"+attr+"]"); if(!b) return;
+    for(const x of $(id).querySelectorAll("button")) x.setAttribute("aria-pressed", x===b?"true":"false");
+    fn(b.dataset[attr]);
+  });
+  for(const x of $(id).querySelectorAll("button")) x.setAttribute("aria-pressed", x.dataset[attr]===String(cur)?"true":"false");
+}
+
+function schedule(){
+  if(S.timer) clearInterval(S.timer);
+  if(S.int>0) S.timer=setInterval(refresh,S.int*1000);
+}
+
+(function init(){
+  const s=store("sort"); if(s) S.sort=s;
+  const d=store("dir"); if(d) S.dir=d;
+  const i=store("int"); if(i!==null&&i!=="") S.int=+i;
+  seg("sortSeg","k",S.sort,k=>{S.sort=k;S.asc=false;store("sort",k);render();});
+  seg("dirSeg","d",S.dir,d=>{S.dir=d;store("dir",d);render();});
+  seg("intSeg","i",S.int,v=>{S.int=+v;store("int",v);schedule();});
+  $("q").addEventListener("input",e=>{S.q=e.target.value;render();});
+  $("now").addEventListener("click",refresh);
+  document.querySelector("thead").addEventListener("click",e=>{
+    const th=e.target.closest("th[data-k]"); if(!th||th.classList.contains("nosort")) return;
+    const k=th.dataset.k;
+    if(S.sort===k) S.asc=!S.asc; else {S.sort=k;S.asc=false;}
+    for(const x of document.querySelectorAll("thead th")) x.removeAttribute("aria-sort");
+    th.setAttribute("aria-sort",S.asc?"ascending":"descending");
+    store("sort",k); render();
+  });
+  document.addEventListener("click",e=>{
+    const b=e.target.closest("button[data-x]"); if(!b) return;
+    S.openSym = S.openSym===b.dataset.x ? null : b.dataset.x;
+    render();
+  });
+  schedule();
+  refresh().then(()=>loadSentiment());
+})();
+</script>
+</body>
+</html>
