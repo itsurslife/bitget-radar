@@ -1,11 +1,11 @@
 name: Bitget K 線鏡像
 
 # 每小時抓一次核心標的（4H 收盤後最晚一小時內就會更新；GitHub 排程延遲時下一輪補上）
-# 每週一 UTC 00:20（UTC+8 08:20）抓 16 支觀察名單的週線
+# 每週一 UTC 00:37（UTC+8 08:37）抓 16 支觀察名單的週線
 on:
   schedule:
-    - cron: "4 * * * *"
-    - cron: "20 0 * * 1"
+    - cron: "17 * * * *"
+    - cron: "37 0 * * 1"
   workflow_dispatch:
     inputs:
       mode:
@@ -41,7 +41,7 @@ jobs:
         id: m
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then echo "mode=${{ inputs.mode }}" >> $GITHUB_OUTPUT
-          elif [ "${{ github.event.schedule }}" = "20 0 * * 1" ]; then echo "mode=weekly" >> $GITHUB_OUTPUT
+          elif [ "${{ github.event.schedule }}" = "37 0 * * 1" ]; then echo "mode=weekly" >> $GITHUB_OUTPUT
           else echo "mode=core" >> $GITHUB_OUTPUT; fi
 
       - name: 抓取與驗證
