@@ -40,3 +40,18 @@ Bitget 公開 API，皆為免金鑰端點：
 ## 這不是什麼
 
 這是**掃描器**，用來從 53 支縮小到少數值得細看的標的。它不產出限價／停損／目標／部位。推薦指數高只代表「現在值得看」，不代表「現在可以進」。非投資建議。
+
+## K 線鏡像（給排程用，2026-10-27 起）
+
+`.github/workflows/candles.yml` 每小時在 GitHub Actions 上向 Bitget 抓 K 線，驗證後寫入 **`data` 分支**：
+
+- `BTCUSDT / ETHUSDT / CLUSDT / NATGASUSDT / MUUSDT` 的 `_1D.csv`、`_4H.csv`（每小時）
+- 16 支觀察名單的 `_1W.csv`（每週一）
+- `status.json`：每個檔案的筆數、最後一根、檢查結果
+
+欄位 `ts,open,high,low,close,volume`，ts 為開盤時間（毫秒），只含已收盤 K，日／週線以 UTC+8 00:00 為界。
+驗證沒過（時間缺口、open≠前收、日界錯位）就不覆寫舊檔。
+
+`tools/` 裡是排程每天跑的固定腳本：`verdict.py`、`verdict_tradfi.py`、`levels.py`（判定與水位）、
+`ledger.py`（紀錄簿新增與結算，含重複單判定）、`check_fresh.py`（資料新鮮度）。
+規則凍結，改動以 git 紀錄為準。
