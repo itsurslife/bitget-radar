@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Bitget K 線抓取器 — 給排程讀的資料源  v1.0
+Bitget K 線抓取器 — 給排程讀的資料源  v1.0.1
 
 在 GitHub Actions 上跑（那裡可以直接連 Bitget，不需要任何人按同意）。
 抓下來的 K 線經過驗證後寫成 CSV，提交到 `data` 分支；Claude 的排程只要 git clone 就能讀。
