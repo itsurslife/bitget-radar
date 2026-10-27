@@ -21,8 +21,8 @@ def expected(gran, now):
     if gran == "1D":
         return ((now - OFF) // D1) * D1 + OFF - D1
     if gran == "1W":
-        # 週線開盤在 UTC+8 週一 00:00；epoch(1970-01-01) 是週四，週一 = epoch + 4 天
-        mon = 4 * D1 + OFF
+        # 週線開盤在 UTC+8 週一 00:00 = UTC 週日 16:00；epoch(1970-01-01) 是週四，+3 天是週日
+        mon = 3 * D1 + OFF
         return ((now - mon) // W1) * W1 + mon - W1
     raise ValueError(gran)
 
