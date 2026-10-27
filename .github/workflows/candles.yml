@@ -17,6 +17,7 @@ on:
 
 permissions:
   contents: write
+  actions: write   # 用來自我續命：公開倉庫 60 天無活動會自動停用排程
 
 concurrency:
   group: candles
@@ -58,3 +59,9 @@ jobs:
           if git diff --cached --quiet; then echo "沒有變化"; exit 0; fi
           git commit -q -m "candles $(date -u +%Y-%m-%dT%H:%MZ) ${{ steps.m.outputs.mode }}"
           git push -q origin data
+
+      - name: 防止 60 天無活動被 GitHub 自動停用
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/candles.yml/enable" || true
