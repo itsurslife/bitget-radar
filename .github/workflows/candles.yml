@@ -1,0 +1,60 @@
+name: Bitget K 線鏡像
+
+# 每小時抓一次核心標的（4H 收盤後最晚一小時內就會更新；GitHub 排程延遲時下一輪補上）
+# 每週一 UTC 00:20（UTC+8 08:20）抓 16 支觀察名單的週線
+on:
+  schedule:
+    - cron: "4 * * * *"
+    - cron: "20 0 * * 1"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "core 或 weekly"
+        default: "core"
+  push:
+    branches: [main]
+    paths: ["tools/fetch_candles.py", ".github/workflows/candles.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: candles
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: src
+
+      - name: 取出 data 分支（不存在就建立）
+        run: |
+          git clone --depth 1 --branch data "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" data \
+            || (mkdir data && cd data && git init -b data && git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}")
+
+      - name: 決定模式
+        id: m
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then echo "mode=${{ inputs.mode }}" >> $GITHUB_OUTPUT
+          elif [ "${{ github.event.schedule }}" = "20 0 * * 1" ]; then echo "mode=weekly" >> $GITHUB_OUTPUT
+          else echo "mode=core" >> $GITHUB_OUTPUT; fi
+
+      - name: 抓取與驗證
+        run: |
+          python3 src/tools/fetch_candles.py ${{ steps.m.outputs.mode }} data
+          # 第一次跑時週線檔還不存在，順便補抓
+          if [ ! -f data/LTCUSDT_1W.csv ]; then python3 src/tools/fetch_candles.py weekly data || true; fi
+
+      - name: 提交到 data 分支
+        run: |
+          cd data
+          git config user.name "candle-bot"
+          git config user.email "candle-bot@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then echo "沒有變化"; exit 0; fi
+          git commit -q -m "candles $(date -u +%Y-%m-%dT%H:%MZ) ${{ steps.m.outputs.mode }}"
+          git push -q origin data
