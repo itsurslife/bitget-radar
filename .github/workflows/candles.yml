@@ -15,7 +15,7 @@ on:
         default: "core"
   push:
     branches: [main]
-    paths: ["tools/fetch_candles.py", ".github/workflows/candles.yml"]
+    paths: ["tools/fetch_candles.py", ".github/workflows/candles.yml", "kick/**"]
 
 permissions:
   contents: write
