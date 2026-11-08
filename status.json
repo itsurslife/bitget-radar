@@ -2,7 +2,7 @@
  "files": {
   "AAVEUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1793601970252,
+   "checked_at": 1794099030520,
    "first": 1745164800000,
    "gaps": 0,
    "last": 1792944000000,
@@ -11,11 +11,11 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1793601970252
+   "written_at": 1794099030520
   },
   "APTUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1793601970252,
+   "checked_at": 1794099030520,
    "first": 1745164800000,
    "gaps": 0,
    "last": 1792944000000,
@@ -24,11 +24,11 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1793601970252
+   "written_at": 1794099030520
   },
   "ARBUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1793601970252,
+   "checked_at": 1794099030520,
    "first": 1745164800000,
    "gaps": 0,
    "last": 1792944000000,
@@ -37,11 +37,11 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1793601970252
+   "written_at": 1794099030520
   },
   "ATOMUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1793601970252,
+   "checked_at": 1794099030520,
    "first": 1745164800000,
    "gaps": 0,
    "last": 1792944000000,
@@ -50,11 +50,11 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1793601970252
+   "written_at": 1794099030520
   },
   "AVAXUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1793601970252,
+   "checked_at": 1794099030520,
    "first": 1745164800000,
    "gaps": 0,
    "last": 1792944000000,
@@ -63,7 +63,7 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1793601970252
+   "written_at": 1794099030520
   },
   "BTCUSDT_1D": {
    "chain_breaks": 0,
@@ -119,7 +119,7 @@
   },
   "CRVUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1793601970252,
+   "checked_at": 1794099030520,
    "first": 1745164800000,
    "gaps": 0,
    "last": 1792944000000,
@@ -128,11 +128,11 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1793601970252
+   "written_at": 1794099030520
   },
   "DOTUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1793601970252,
+   "checked_at": 1794099030520,
    "first": 1745164800000,
    "gaps": 0,
    "last": 1792944000000,
@@ -141,7 +141,7 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1793601970252
+   "written_at": 1794099030520
   },
   "ETHUSDT_1D": {
    "chain_breaks": 0,
@@ -171,7 +171,7 @@
   },
   "FILUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1793601970252,
+   "checked_at": 1794099030520,
    "first": 1745164800000,
    "gaps": 0,
    "last": 1792944000000,
@@ -180,11 +180,11 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1793601970252
+   "written_at": 1794099030520
   },
   "INJUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1793601970252,
+   "checked_at": 1794099030520,
    "first": 1745164800000,
    "gaps": 0,
    "last": 1792944000000,
@@ -193,11 +193,11 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1793601970252
+   "written_at": 1794099030520
   },
   "LDOUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1793601970252,
+   "checked_at": 1794099030520,
    "first": 1745164800000,
    "gaps": 0,
    "last": 1792944000000,
@@ -206,11 +206,11 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1793601970252
+   "written_at": 1794099030520
   },
   "LTCUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1793601970252,
+   "checked_at": 1794099030520,
    "first": 1745164800000,
    "gaps": 0,
    "last": 1792944000000,
@@ -219,7 +219,7 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1793601970252
+   "written_at": 1794099030520
   },
   "MUUSDT_1D": {
    "chain_breaks": 0,
@@ -275,7 +275,7 @@
   },
   "NEARUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1793601970252,
+   "checked_at": 1794099030520,
    "first": 1745164800000,
    "gaps": 0,
    "last": 1792944000000,
@@ -284,11 +284,11 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1793601970252
+   "written_at": 1794099030520
   },
   "OPUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1793601970252,
+   "checked_at": 1794099030520,
    "first": 1745164800000,
    "gaps": 0,
    "last": 1792944000000,
@@ -297,11 +297,11 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1793601970252
+   "written_at": 1794099030520
   },
   "SEIUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1793601970252,
+   "checked_at": 1794099030520,
    "first": 1745164800000,
    "gaps": 0,
    "last": 1792944000000,
@@ -310,11 +310,11 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1793601970252
+   "written_at": 1794099030520
   },
   "SUIUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1793601970252,
+   "checked_at": 1794099030520,
    "first": 1745164800000,
    "gaps": 0,
    "last": 1792944000000,
@@ -323,11 +323,11 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1793601970252
+   "written_at": 1794099030520
   },
   "UNIUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1793601970252,
+   "checked_at": 1794099030520,
    "first": 1745164800000,
    "gaps": 0,
    "last": 1792944000000,
@@ -336,9 +336,9 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1793601970252
+   "written_at": 1794099030520
   }
  },
  "note": "ts = 開盤時間（毫秒，UTC）。只含已收盤 K。欄位 ts,open,high,low,close,volume(base)。日線/週線以 UTC+8 00:00 為界。",
- "updated_at": 1794098126873
+ "updated_at": 1794099030520
 }
