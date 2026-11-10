@@ -13,6 +13,32 @@
    "rows": 80,
    "written_at": 1794208090178
   },
+  "AMDUSDT_1D": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1776182400000,
+   "gaps": 0,
+   "last": 1794153600000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 2,
+   "rows": 209,
+   "written_at": 1794278521569
+  },
+  "AMDUSDT_4H": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1789084800000,
+   "gaps": 0,
+   "last": 1794254400000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 1,
+   "rows": 360,
+   "written_at": 1794278521569
+  },
   "APTUSDT_1W": {
    "chain_breaks": 0,
    "checked_at": 1794208090178,
@@ -26,6 +52,19 @@
    "rows": 80,
    "written_at": 1794208090178
   },
+  "ARBUSDT_1D": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1757952000000,
+   "gaps": 0,
+   "last": 1794153600000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 4,
+   "rows": 420,
+   "written_at": 1794278521569
+  },
   "ARBUSDT_1W": {
    "chain_breaks": 0,
    "checked_at": 1794208090178,
@@ -38,6 +77,19 @@
    "pages": 6,
    "rows": 80,
    "written_at": 1794208090178
+  },
+  "ARBUSDT_4H": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1789084800000,
+   "gaps": 0,
+   "last": 1794254400000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 1,
+   "rows": 360,
+   "written_at": 1794278521569
   },
   "ATOMUSDT_1W": {
    "chain_breaks": 0,
@@ -67,7 +119,7 @@
   },
   "BTCUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1794278251014,
+   "checked_at": 1794278509394,
    "first": 1757952000000,
    "gaps": 0,
    "last": 1794153600000,
@@ -76,11 +128,11 @@
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1794278251014
+   "written_at": 1794278509394
   },
   "BTCUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1794278251014,
+   "checked_at": 1794278509394,
    "first": 1789084800000,
    "gaps": 0,
    "last": 1794254400000,
@@ -89,11 +141,11 @@
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1794278251014
+   "written_at": 1794278509394
   },
   "CLUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1794278251014,
+   "checked_at": 1794278509394,
    "first": 1773590400000,
    "gaps": 0,
    "last": 1794153600000,
@@ -102,11 +154,11 @@
    "ok": true,
    "pages": 2,
    "rows": 239,
-   "written_at": 1794278251014
+   "written_at": 1794278509394
   },
   "CLUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1794278251014,
+   "checked_at": 1794278509394,
    "first": 1789084800000,
    "gaps": 0,
    "last": 1794254400000,
@@ -115,7 +167,33 @@
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1794278251014
+   "written_at": 1794278509394
+  },
+  "COINUSDT_1D": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1757952000000,
+   "gaps": 0,
+   "last": 1794153600000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 4,
+   "rows": 420,
+   "written_at": 1794278521569
+  },
+  "COINUSDT_4H": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1789084800000,
+   "gaps": 0,
+   "last": 1794254400000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 1,
+   "rows": 360,
+   "written_at": 1794278521569
   },
   "CRVUSDT_1W": {
    "chain_breaks": 0,
@@ -143,9 +221,9 @@
    "rows": 80,
    "written_at": 1794208090178
   },
-  "ETHUSDT_1D": {
+  "ENAUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1794278251014,
+   "checked_at": 1794278521569,
    "first": 1757952000000,
    "gaps": 0,
    "last": 1794153600000,
@@ -154,11 +232,11 @@
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1794278251014
+   "written_at": 1794278521569
   },
-  "ETHUSDT_4H": {
+  "ENAUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1794278251014,
+   "checked_at": 1794278521569,
    "first": 1789084800000,
    "gaps": 0,
    "last": 1794254400000,
@@ -167,7 +245,33 @@
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1794278251014
+   "written_at": 1794278521569
+  },
+  "ETHUSDT_1D": {
+   "chain_breaks": 0,
+   "checked_at": 1794278509394,
+   "first": 1757952000000,
+   "gaps": 0,
+   "last": 1794153600000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 4,
+   "rows": 420,
+   "written_at": 1794278509394
+  },
+  "ETHUSDT_4H": {
+   "chain_breaks": 0,
+   "checked_at": 1794278509394,
+   "first": 1789084800000,
+   "gaps": 0,
+   "last": 1794254400000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 1,
+   "rows": 360,
+   "written_at": 1794278509394
   },
   "FILUSDT_1W": {
    "chain_breaks": 0,
@@ -181,6 +285,32 @@
    "pages": 6,
    "rows": 80,
    "written_at": 1794208090178
+  },
+  "GOOGLUSDT_1D": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1757952000000,
+   "gaps": 0,
+   "last": 1794153600000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 4,
+   "rows": 420,
+   "written_at": 1794278521569
+  },
+  "GOOGLUSDT_4H": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1789084800000,
+   "gaps": 0,
+   "last": 1794254400000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 1,
+   "rows": 360,
+   "written_at": 1794278521569
   },
   "INJUSDT_1W": {
    "chain_breaks": 0,
@@ -221,9 +351,35 @@
    "rows": 80,
    "written_at": 1794208090178
   },
+  "MSTRUSDT_1D": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1757952000000,
+   "gaps": 0,
+   "last": 1794153600000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 4,
+   "rows": 420,
+   "written_at": 1794278521569
+  },
+  "MSTRUSDT_4H": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1789084800000,
+   "gaps": 0,
+   "last": 1794254400000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 1,
+   "rows": 360,
+   "written_at": 1794278521569
+  },
   "MUUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1794278251014,
+   "checked_at": 1794278509394,
    "first": 1770739200000,
    "gaps": 0,
    "last": 1794153600000,
@@ -232,11 +388,11 @@
    "ok": true,
    "pages": 3,
    "rows": 272,
-   "written_at": 1794278251014
+   "written_at": 1794278509394
   },
   "MUUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1794278251014,
+   "checked_at": 1794278509394,
    "first": 1789084800000,
    "gaps": 0,
    "last": 1794254400000,
@@ -245,11 +401,11 @@
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1794278251014
+   "written_at": 1794278509394
   },
   "NATGASUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1794278251014,
+   "checked_at": 1794278509394,
    "first": 1774972800000,
    "gaps": 0,
    "last": 1794153600000,
@@ -258,11 +414,11 @@
    "ok": true,
    "pages": 2,
    "rows": 223,
-   "written_at": 1794278251014
+   "written_at": 1794278509394
   },
   "NATGASUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1794278251014,
+   "checked_at": 1794278509394,
    "first": 1789084800000,
    "gaps": 0,
    "last": 1794254400000,
@@ -271,7 +427,20 @@
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1794278251014
+   "written_at": 1794278509394
+  },
+  "NEARUSDT_1D": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1757952000000,
+   "gaps": 0,
+   "last": 1794153600000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 4,
+   "rows": 420,
+   "written_at": 1794278521569
   },
   "NEARUSDT_1W": {
    "chain_breaks": 0,
@@ -286,6 +455,71 @@
    "rows": 80,
    "written_at": 1794208090178
   },
+  "NEARUSDT_4H": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1789084800000,
+   "gaps": 0,
+   "last": 1794254400000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 1,
+   "rows": 360,
+   "written_at": 1794278521569
+  },
+  "NVDAUSDT_1D": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1757952000000,
+   "gaps": 0,
+   "last": 1794153600000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 4,
+   "rows": 420,
+   "written_at": 1794278521569
+  },
+  "NVDAUSDT_4H": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1789084800000,
+   "gaps": 0,
+   "last": 1794254400000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 1,
+   "rows": 360,
+   "written_at": 1794278521569
+  },
+  "ONDOUSDT_1D": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1757952000000,
+   "gaps": 0,
+   "last": 1794153600000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 4,
+   "rows": 420,
+   "written_at": 1794278521569
+  },
+  "ONDOUSDT_4H": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1789084800000,
+   "gaps": 0,
+   "last": 1794254400000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 1,
+   "rows": 360,
+   "written_at": 1794278521569
+  },
   "OPUSDT_1W": {
    "chain_breaks": 0,
    "checked_at": 1794208090178,
@@ -298,6 +532,32 @@
    "pages": 6,
    "rows": 80,
    "written_at": 1794208090178
+  },
+  "PEPEUSDT_1D": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1757952000000,
+   "gaps": 0,
+   "last": 1794153600000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 4,
+   "rows": 420,
+   "written_at": 1794278521569
+  },
+  "PEPEUSDT_4H": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1789084800000,
+   "gaps": 0,
+   "last": 1794254400000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 1,
+   "rows": 360,
+   "written_at": 1794278521569
   },
   "SEIUSDT_1W": {
    "chain_breaks": 0,
@@ -312,6 +572,45 @@
    "rows": 80,
    "written_at": 1794208090178
   },
+  "SOLUSDT_1D": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1757952000000,
+   "gaps": 0,
+   "last": 1794153600000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 4,
+   "rows": 420,
+   "written_at": 1794278521569
+  },
+  "SOLUSDT_4H": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1789084800000,
+   "gaps": 0,
+   "last": 1794254400000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 1,
+   "rows": 360,
+   "written_at": 1794278521569
+  },
+  "SUIUSDT_1D": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1757952000000,
+   "gaps": 0,
+   "last": 1794153600000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 4,
+   "rows": 420,
+   "written_at": 1794278521569
+  },
   "SUIUSDT_1W": {
    "chain_breaks": 0,
    "checked_at": 1794208090178,
@@ -325,6 +624,45 @@
    "rows": 80,
    "written_at": 1794208090178
   },
+  "SUIUSDT_4H": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1789084800000,
+   "gaps": 0,
+   "last": 1794254400000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 1,
+   "rows": 360,
+   "written_at": 1794278521569
+  },
+  "TSLAUSDT_1D": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1757952000000,
+   "gaps": 0,
+   "last": 1794153600000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 4,
+   "rows": 420,
+   "written_at": 1794278521569
+  },
+  "TSLAUSDT_4H": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1789084800000,
+   "gaps": 0,
+   "last": 1794254400000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 1,
+   "rows": 360,
+   "written_at": 1794278521569
+  },
   "UNIUSDT_1W": {
    "chain_breaks": 0,
    "checked_at": 1794208090178,
@@ -337,8 +675,34 @@
    "pages": 6,
    "rows": 80,
    "written_at": 1794208090178
+  },
+  "XRPUSDT_1D": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1757952000000,
+   "gaps": 0,
+   "last": 1794153600000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 4,
+   "rows": 420,
+   "written_at": 1794278521569
+  },
+  "XRPUSDT_4H": {
+   "chain_breaks": 0,
+   "checked_at": 1794278521569,
+   "first": 1789084800000,
+   "gaps": 0,
+   "last": 1794254400000,
+   "limit_used": 200,
+   "misaligned": 0,
+   "ok": true,
+   "pages": 1,
+   "rows": 360,
+   "written_at": 1794278521569
   }
  },
  "note": "ts = 開盤時間（毫秒，UTC）。只含已收盤 K。欄位 ts,open,high,low,close,volume(base)。日線/週線以 UTC+8 00:00 為界。",
- "updated_at": 1794278251014
+ "updated_at": 1794278521569
 }
