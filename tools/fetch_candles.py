@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Bitget K 線抓取器 — 給排程讀的資料源  v1.0.1
+Bitget K 線抓取器 — 給排程讀的資料源  v1.1.0
 
 在 GitHub Actions 上跑（那裡可以直接連 Bitget，不需要任何人按同意）。
 抓下來的 K 線經過驗證後寫成 CSV，提交到 `data` 分支；Claude 的排程只要 git clone 就能讀。
 
 用法：
   python3 tools/fetch_candles.py core   OUTDIR   # 5 個標的的 1D + 4H（每小時跑）
+  python3 tools/fetch_candles.py alts   OUTDIR   # 14 支山寨幣/代幣化股票的 1D + 4H（每天早上跑）
   python3 tools/fetch_candles.py weekly OUTDIR   # 16 支觀察名單的 1W（每週跑）
 
 規則（全部來自實測踩過的坑）：
@@ -30,6 +31,11 @@ CORE_NEED = {"1D": 420, "4H": 360}  # 日線 EMA200+斜率要 260；多抓留餘
 WATCH = ["LTCUSDT", "LDOUSDT", "SUIUSDT", "AVAXUSDT", "DOTUSDT", "ATOMUSDT", "NEARUSDT", "APTUSDT",
          "ARBUSDT", "OPUSDT", "FILUSDT", "INJUSDT", "AAVEUSDT", "UNIUSDT", "CRVUSDT", "SEIUSDT"]
 WATCH_NEED = {"1W": 80}
+# 山寨幣 + 代幣化股票：07:51 的掃描排程要 1D/4H。判定腳本最低要 1D 160 根、4H 120 根；
+# 日線長均線在 >=260 根時用 EMA200，否則退 EMA144，所以 1D 盡量抓滿。
+ALT = ["SOLUSDT", "XRPUSDT", "SUIUSDT", "NEARUSDT", "ARBUSDT", "ONDOUSDT", "ENAUSDT", "PEPEUSDT",
+       "NVDAUSDT", "AMDUSDT", "TSLAUSDT", "COINUSDT", "MSTRUSDT", "GOOGLUSDT"]
+ALT_NEED = {"1D": 420, "4H": 360}
 
 
 def now_ms():
@@ -119,8 +125,12 @@ def main():
     except Exception:  # noqa: BLE001
         status = {}
     status.setdefault("files", {})
-    jobs = ([(s, g, CORE_NEED[g]) for s in CORE for g in ("1D", "4H")] if mode == "core"
-            else [(s, "1W", WATCH_NEED["1W"]) for s in WATCH])
+    if mode == "core":
+        jobs = [(s, g, CORE_NEED[g]) for s in CORE for g in ("1D", "4H")]
+    elif mode == "alts":
+        jobs = [(s, g, ALT_NEED[g]) for s in ALT for g in ("1D", "4H")]
+    else:
+        jobs = [(s, "1W", WATCH_NEED["1W"]) for s in WATCH]
     t = now_ms()
     for sym, gran, need in jobs:
         key = f"{sym}_{gran}"

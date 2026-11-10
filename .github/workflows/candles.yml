@@ -3,15 +3,18 @@ name: Bitget K 線鏡像
 # 核心標的：每小時一次；另外在每根 4H 收盤後的第一個小時內多排 4 次。
 # GitHub 的排程是「盡力而為」，實測會延遲十幾分鐘、偶爾整個時段被跳過，多排幾次是唯一不需外部金鑰的備援。
 # 每週一 UTC 00:37（UTC+8 08:37）抓 16 支觀察名單的週線
+# 山寨幣/代幣化股票：UTC 22:07/22:37/23:07/23:37（UTC+8 06:07/06:37/07:07/07:37）排 4 次，
+# 給 07:51 的掃描排程留緩衝 —— GitHub 排程會延遲十幾分鐘、偶爾整個時段被跳過，單排兩次不夠。
 on:
   schedule:
     - cron: "17 * * * *"
     - cron: "3,9,26,41 0,4,8,12,16,20 * * *"
     - cron: "37 0 * * 1"
+    - cron: "7,37 22,23 * * *"
   workflow_dispatch:
     inputs:
       mode:
-        description: "core 或 weekly"
+        description: "core、alts 或 weekly"
         default: "core"
   push:
     branches: [main]
@@ -28,7 +31,7 @@ concurrency:
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30   # alts 模式 14 支 × 2 週期 = 28 個 job，比 core 的 10 個重
     steps:
       - uses: actions/checkout@v4
         with:
@@ -44,6 +47,7 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then echo "mode=${{ inputs.mode }}" >> $GITHUB_OUTPUT
           elif [ "${{ github.event.schedule }}" = "37 0 * * 1" ]; then echo "mode=weekly" >> $GITHUB_OUTPUT
+          elif [ "${{ github.event.schedule }}" = "7,37 22,23 * * *" ]; then echo "mode=alts" >> $GITHUB_OUTPUT
           else echo "mode=core" >> $GITHUB_OUTPUT; fi
 
       - name: 抓取與驗證
@@ -51,6 +55,8 @@ jobs:
           python3 src/tools/fetch_candles.py ${{ steps.m.outputs.mode }} data
           # 第一次跑時週線檔還不存在，順便補抓
           if [ ! -f data/LTCUSDT_1W.csv ]; then python3 src/tools/fetch_candles.py weekly data || true; fi
+          # 新加的山寨幣/代幣化股票檔案還不存在，順便補抓（push 這份補丁後會立刻走到這裡）
+          if [ ! -f data/SOLUSDT_1D.csv ]; then python3 src/tools/fetch_candles.py alts data || true; fi
 
       - name: 提交到 data 分支
         run: |
