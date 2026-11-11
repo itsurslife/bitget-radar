@@ -57,6 +57,11 @@ jobs:
           if [ ! -f data/LTCUSDT_1W.csv ]; then python3 src/tools/fetch_candles.py weekly data || true; fi
           # 新加的山寨幣/代幣化股票檔案還不存在，順便補抓（push 這份補丁後會立刻走到這裡）
           if [ ! -f data/SOLUSDT_1D.csv ]; then python3 src/tools/fetch_candles.py alts data || true; fi
+          # GitHub 常整段跳過 alts 專用時段（2026-11-11 早上 4 次全被跳過），所以每次 core 都順便檢查：
+          # 14 支的 1D/4H 只要落後就一起抓。core 跑得到，alts 就跟著更新。
+          if [ "${{ steps.m.outputs.mode }}" = "core" ] && ! python3 src/tools/check_fresh.py data SOLUSDT_1D SOLUSDT_4H > /dev/null; then
+            echo "alts 資料落後，順便補抓"; python3 src/tools/fetch_candles.py alts data || true
+          fi
 
       - name: 提交到 data 分支
         run: |
