@@ -30,6 +30,14 @@ Bitget 公開 API，皆為免金鑰端點：
 - `/api/v2/mix/market/account-long-short` — 散戶多空帳戶比
 - `/api/v2/mix/market/fills` — 近期成交（含主動方向）
 
+## 盯盤羅盤（compass.html）
+
+選一個幣，直接看現在是多頭還是空頭方向、該站多單還是空單、離支撐壓力多遠。判定邏輯照 `tools/` 的三層判定（方向層＋環境層＋反轉警示），資料同樣由瀏覽器直接向 Bitget 公開 API 取得，手機版已調整。
+
+- `/api/v2/mix/market/history-candles` — 日線（分頁約 270 根）、4H、1H
+- `/api/v2/mix/market/candles` — 只取最新 3 根，補上未收盤那根
+- `/api/v2/mix/market/tickers` — 即時報價
+
 ## 已知限制
 
 1. **CL / NATGAS / MU 的 `fundingRate` 恆為 0** —— 傳統市場永續沒有資金費率機制，該成分標為 N/A 並退出加權。
