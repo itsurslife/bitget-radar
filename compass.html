@@ -536,7 +536,9 @@ const sleep = ms => new Promise(r=>setTimeout(r,ms));
 // ---------- Bitget ----------
 async function jget(path){
   const u = API+path+(path.includes("?")?"&":"?")+"_t="+Date.now();
-  const r = await fetch(u,{cache:"no-store"});
+  const ac = new AbortController(), to = setTimeout(()=>ac.abort(), 10000);
+  let r;
+  try { r = await fetch(u,{cache:"no-store",signal:ac.signal}); } finally { clearTimeout(to); }
   if(!r.ok) throw new Error("HTTP "+r.status);
   const j = await r.json();
   if(j.code!=="00000") throw new Error(j.msg||("code "+j.code));
@@ -555,12 +557,12 @@ async function history(sym, gran, pages){
     if (!bars.length) throw new Error("沒有 K 線");
     first = bars;
     const last = Math.max(...bars.map(b=>b.t));
-    if (last >= expectLast - per) break;   // 夠新
+    if (last >= expectLast) break;   // 夠新
   }
   let all = first;
   for (let p = 1; p < pages; p++) {
     const oldest = Math.min(...all.map(b=>b.t));
-    const d = await jget(`/history-candles?symbol=${sym}USDT&productType=USDT-FUTURES&granularity=${gran}&limit=200&endTime=${oldest-1}`);
+    const d = await jget(`/history-candles?symbol=${sym}USDT&productType=USDT-FUTURES&granularity=${gran}&limit=200&endTime=${oldest}`);
     const bars = (d||[]).map(toB);
     if (!bars.length) break;
     all = bars.concat(all);
@@ -606,7 +608,7 @@ function recompute(sym){
   schedule();
 }
 let rt=null;
-function schedule(){ if(rt) return; rt=requestAnimationFrame(()=>{rt=null; renderPicker(); renderMain(); renderTable();}); }
+function schedule(){ if(rt) return; rt=setTimeout(()=>{rt=null; try{ renderPicker(); renderMain(); renderTable(); }catch(e){ console.error(e); } },30); }
 
 // 更新節奏：報價 10 秒；選中的幣 K 線 60 秒；其他幣 5 分鐘
 let busy=false;
