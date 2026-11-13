@@ -119,7 +119,7 @@
   },
   "BTCUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1794571193131,
+   "checked_at": 1794571518247,
    "first": 1758211200000,
    "gaps": 0,
    "last": 1794412800000,
@@ -128,24 +128,24 @@
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1794571193131
+   "written_at": 1794571518247
   },
   "BTCUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1794571193131,
-   "first": 1789372800000,
+   "checked_at": 1794571518247,
+   "first": 1789387200000,
    "gaps": 0,
-   "last": 1794542400000,
+   "last": 1794556800000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1794571193131
+   "written_at": 1794571518247
   },
   "CLUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1794571193131,
+   "checked_at": 1794571518247,
    "first": 1773590400000,
    "gaps": 0,
    "last": 1794412800000,
@@ -154,20 +154,20 @@
    "ok": true,
    "pages": 2,
    "rows": 242,
-   "written_at": 1794571193131
+   "written_at": 1794571518247
   },
   "CLUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1794571193131,
-   "first": 1789372800000,
+   "checked_at": 1794571518247,
+   "first": 1789387200000,
    "gaps": 0,
-   "last": 1794542400000,
+   "last": 1794556800000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1794571193131
+   "written_at": 1794571518247
   },
   "COINUSDT_1D": {
    "chain_breaks": 0,
@@ -249,7 +249,7 @@
   },
   "ETHUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1794571193131,
+   "checked_at": 1794571518247,
    "first": 1758211200000,
    "gaps": 0,
    "last": 1794412800000,
@@ -258,20 +258,20 @@
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1794571193131
+   "written_at": 1794571518247
   },
   "ETHUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1794571193131,
-   "first": 1789372800000,
+   "checked_at": 1794571518247,
+   "first": 1789387200000,
    "gaps": 0,
-   "last": 1794542400000,
+   "last": 1794556800000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1794571193131
+   "written_at": 1794571518247
   },
   "FILUSDT_1W": {
    "chain_breaks": 0,
@@ -379,7 +379,7 @@
   },
   "MUUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1794571193131,
+   "checked_at": 1794571518247,
    "first": 1770739200000,
    "gaps": 0,
    "last": 1794412800000,
@@ -388,11 +388,11 @@
    "ok": true,
    "pages": 3,
    "rows": 275,
-   "written_at": 1794571193131
+   "written_at": 1794571518247
   },
   "MUUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1794571193131,
+   "checked_at": 1794571518247,
    "first": 1789387200000,
    "gaps": 0,
    "last": 1794556800000,
@@ -401,11 +401,11 @@
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1794571193131
+   "written_at": 1794571518247
   },
   "NATGASUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1794571193131,
+   "checked_at": 1794571518247,
    "first": 1774972800000,
    "gaps": 0,
    "last": 1794412800000,
@@ -414,11 +414,11 @@
    "ok": true,
    "pages": 2,
    "rows": 226,
-   "written_at": 1794571193131
+   "written_at": 1794571518247
   },
   "NATGASUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1794571193131,
+   "checked_at": 1794571518247,
    "first": 1789387200000,
    "gaps": 0,
    "last": 1794556800000,
@@ -427,7 +427,7 @@
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1794571193131
+   "written_at": 1794571518247
   },
   "NEARUSDT_1D": {
    "chain_breaks": 0,
@@ -704,5 +704,5 @@
   }
  },
  "note": "ts = 開盤時間（毫秒，UTC）。只含已收盤 K。欄位 ts,open,high,low,close,volume(base)。日線/週線以 UTC+8 00:00 為界。",
- "updated_at": 1794571205460
+ "updated_at": 1794571518247
 }
