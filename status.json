@@ -15,29 +15,29 @@
   },
   "AMDUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
+   "checked_at": 1795104366900,
    "first": 1776182400000,
    "gaps": 0,
-   "last": 1794931200000,
+   "last": 1795017600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 2,
-   "rows": 218,
-   "written_at": 1795089930184
+   "rows": 219,
+   "written_at": 1795104366900
   },
   "AMDUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1789905600000,
+   "checked_at": 1795104366900,
+   "first": 1789920000000,
    "gaps": 0,
-   "last": 1795075200000,
+   "last": 1795089600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "APTUSDT_1W": {
    "chain_breaks": 0,
@@ -54,16 +54,16 @@
   },
   "ARBUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1758729600000,
+   "checked_at": 1795104366900,
+   "first": 1758816000000,
    "gaps": 0,
-   "last": 1794931200000,
+   "last": 1795017600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "ARBUSDT_1W": {
    "chain_breaks": 0,
@@ -80,16 +80,16 @@
   },
   "ARBUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1789905600000,
+   "checked_at": 1795104366900,
+   "first": 1789920000000,
    "gaps": 0,
-   "last": 1795075200000,
+   "last": 1795089600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "ATOMUSDT_1W": {
    "chain_breaks": 0,
@@ -119,81 +119,81 @@
   },
   "BTCUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795093540902,
-   "first": 1758729600000,
+   "checked_at": 1795104354243,
+   "first": 1758816000000,
    "gaps": 0,
-   "last": 1794931200000,
+   "last": 1795017600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795093540902
+   "written_at": 1795104354243
   },
   "BTCUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795093540902,
-   "first": 1789905600000,
+   "checked_at": 1795104354243,
+   "first": 1789920000000,
    "gaps": 0,
-   "last": 1795075200000,
+   "last": 1795089600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795093540902
+   "written_at": 1795104354243
   },
   "CLUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795093540902,
+   "checked_at": 1795104354243,
    "first": 1773590400000,
    "gaps": 0,
-   "last": 1794931200000,
+   "last": 1795017600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 2,
-   "rows": 248,
-   "written_at": 1795093540902
+   "rows": 249,
+   "written_at": 1795104354243
   },
   "CLUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795093540902,
-   "first": 1789905600000,
+   "checked_at": 1795104354243,
+   "first": 1789920000000,
    "gaps": 0,
-   "last": 1795075200000,
+   "last": 1795089600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795093540902
+   "written_at": 1795104354243
   },
   "COINUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1758729600000,
+   "checked_at": 1795104366900,
+   "first": 1758816000000,
    "gaps": 0,
-   "last": 1794931200000,
+   "last": 1795017600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "COINUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1789905600000,
+   "checked_at": 1795104366900,
+   "first": 1789920000000,
    "gaps": 0,
-   "last": 1795075200000,
+   "last": 1795089600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "CRVUSDT_1W": {
    "chain_breaks": 0,
@@ -223,55 +223,55 @@
   },
   "ENAUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1758729600000,
+   "checked_at": 1795104366900,
+   "first": 1758816000000,
    "gaps": 0,
-   "last": 1794931200000,
+   "last": 1795017600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "ENAUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1789905600000,
+   "checked_at": 1795104366900,
+   "first": 1789920000000,
    "gaps": 0,
-   "last": 1795075200000,
+   "last": 1795089600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "ETHUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795093540902,
-   "first": 1758729600000,
+   "checked_at": 1795104354243,
+   "first": 1758816000000,
    "gaps": 0,
-   "last": 1794931200000,
+   "last": 1795017600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795093540902
+   "written_at": 1795104354243
   },
   "ETHUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795093540902,
-   "first": 1789905600000,
+   "checked_at": 1795104354243,
+   "first": 1789920000000,
    "gaps": 0,
-   "last": 1795075200000,
+   "last": 1795089600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795093540902
+   "written_at": 1795104354243
   },
   "FILUSDT_1W": {
    "chain_breaks": 0,
@@ -288,29 +288,29 @@
   },
   "GOOGLUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1758729600000,
+   "checked_at": 1795104366900,
+   "first": 1758816000000,
    "gaps": 0,
-   "last": 1794931200000,
+   "last": 1795017600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "GOOGLUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1789905600000,
+   "checked_at": 1795104366900,
+   "first": 1789920000000,
    "gaps": 0,
-   "last": 1795075200000,
+   "last": 1795089600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "INJUSDT_1W": {
    "chain_breaks": 0,
@@ -353,94 +353,94 @@
   },
   "MSTRUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1758729600000,
+   "checked_at": 1795104366900,
+   "first": 1758816000000,
    "gaps": 0,
-   "last": 1794931200000,
+   "last": 1795017600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "MSTRUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1789905600000,
+   "checked_at": 1795104366900,
+   "first": 1789920000000,
    "gaps": 0,
-   "last": 1795075200000,
+   "last": 1795089600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "MUUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795093540902,
+   "checked_at": 1795104354243,
    "first": 1770739200000,
    "gaps": 0,
-   "last": 1794931200000,
+   "last": 1795017600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 3,
-   "rows": 281,
-   "written_at": 1795093540902
+   "rows": 282,
+   "written_at": 1795104354243
   },
   "MUUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795093540902,
-   "first": 1789905600000,
+   "checked_at": 1795104354243,
+   "first": 1789920000000,
    "gaps": 0,
-   "last": 1795075200000,
+   "last": 1795089600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795093540902
+   "written_at": 1795104354243
   },
   "NATGASUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795093540902,
+   "checked_at": 1795104354243,
    "first": 1774972800000,
    "gaps": 0,
-   "last": 1794931200000,
+   "last": 1795017600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 2,
-   "rows": 232,
-   "written_at": 1795093540902
+   "rows": 233,
+   "written_at": 1795104354243
   },
   "NATGASUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795093540902,
-   "first": 1789905600000,
+   "checked_at": 1795104354243,
+   "first": 1789920000000,
    "gaps": 0,
-   "last": 1795075200000,
+   "last": 1795089600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795093540902
+   "written_at": 1795104354243
   },
   "NEARUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1758729600000,
+   "checked_at": 1795104366900,
+   "first": 1758816000000,
    "gaps": 0,
-   "last": 1794931200000,
+   "last": 1795017600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "NEARUSDT_1W": {
    "chain_breaks": 0,
@@ -457,68 +457,68 @@
   },
   "NEARUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1789905600000,
+   "checked_at": 1795104366900,
+   "first": 1789920000000,
    "gaps": 0,
-   "last": 1795075200000,
+   "last": 1795089600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "NVDAUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1758729600000,
+   "checked_at": 1795104366900,
+   "first": 1758816000000,
    "gaps": 0,
-   "last": 1794931200000,
+   "last": 1795017600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "NVDAUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1789905600000,
+   "checked_at": 1795104366900,
+   "first": 1789920000000,
    "gaps": 0,
-   "last": 1795075200000,
+   "last": 1795089600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "ONDOUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1758729600000,
+   "checked_at": 1795104366900,
+   "first": 1758816000000,
    "gaps": 0,
-   "last": 1794931200000,
+   "last": 1795017600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "ONDOUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1789905600000,
+   "checked_at": 1795104366900,
+   "first": 1789920000000,
    "gaps": 0,
-   "last": 1795075200000,
+   "last": 1795089600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "OPUSDT_1W": {
    "chain_breaks": 0,
@@ -535,29 +535,29 @@
   },
   "PEPEUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1758729600000,
+   "checked_at": 1795104366900,
+   "first": 1758816000000,
    "gaps": 0,
-   "last": 1794931200000,
+   "last": 1795017600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "PEPEUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1789905600000,
+   "checked_at": 1795104366900,
+   "first": 1789920000000,
    "gaps": 0,
-   "last": 1795075200000,
+   "last": 1795089600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "SEIUSDT_1W": {
    "chain_breaks": 0,
@@ -574,42 +574,42 @@
   },
   "SOLUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1758729600000,
+   "checked_at": 1795104366900,
+   "first": 1758816000000,
    "gaps": 0,
-   "last": 1794931200000,
+   "last": 1795017600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "SOLUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1789905600000,
+   "checked_at": 1795104366900,
+   "first": 1789920000000,
    "gaps": 0,
-   "last": 1795075200000,
+   "last": 1795089600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "SUIUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1758729600000,
+   "checked_at": 1795104366900,
+   "first": 1758816000000,
    "gaps": 0,
-   "last": 1794931200000,
+   "last": 1795017600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "SUIUSDT_1W": {
    "chain_breaks": 0,
@@ -626,42 +626,42 @@
   },
   "SUIUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1789905600000,
+   "checked_at": 1795104366900,
+   "first": 1789920000000,
    "gaps": 0,
-   "last": 1795075200000,
+   "last": 1795089600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "TSLAUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1758729600000,
+   "checked_at": 1795104366900,
+   "first": 1758816000000,
    "gaps": 0,
-   "last": 1794931200000,
+   "last": 1795017600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "TSLAUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1789905600000,
+   "checked_at": 1795104366900,
+   "first": 1789920000000,
    "gaps": 0,
-   "last": 1795075200000,
+   "last": 1795089600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "UNIUSDT_1W": {
    "chain_breaks": 0,
@@ -678,31 +678,31 @@
   },
   "XRPUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1758729600000,
+   "checked_at": 1795104366900,
+   "first": 1758816000000,
    "gaps": 0,
-   "last": 1794931200000,
+   "last": 1795017600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   },
   "XRPUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795089930184,
-   "first": 1789905600000,
+   "checked_at": 1795104366900,
+   "first": 1789920000000,
    "gaps": 0,
-   "last": 1795075200000,
+   "last": 1795089600000,
    "limit_used": 200,
    "misaligned": 0,
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795089930184
+   "written_at": 1795104366900
   }
  },
  "note": "ts = 開盤時間（毫秒，UTC）。只含已收盤 K。欄位 ts,open,high,low,close,volume(base)。日線/週線以 UTC+8 00:00 為界。",
- "updated_at": 1795093540902
+ "updated_at": 1795104366900
 }
