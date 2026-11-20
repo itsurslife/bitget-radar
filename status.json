@@ -15,7 +15,7 @@
   },
   "AMDUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1776182400000,
    "gaps": 0,
    "last": 1795017600000,
@@ -24,11 +24,11 @@
    "ok": true,
    "pages": 2,
    "rows": 219,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "AMDUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1789948800000,
    "gaps": 0,
    "last": 1795118400000,
@@ -37,7 +37,7 @@
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "APTUSDT_1W": {
    "chain_breaks": 0,
@@ -54,7 +54,7 @@
   },
   "ARBUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1758816000000,
    "gaps": 0,
    "last": 1795017600000,
@@ -63,7 +63,7 @@
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "ARBUSDT_1W": {
    "chain_breaks": 0,
@@ -80,7 +80,7 @@
   },
   "ARBUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1789948800000,
    "gaps": 0,
    "last": 1795118400000,
@@ -89,7 +89,7 @@
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "ATOMUSDT_1W": {
    "chain_breaks": 0,
@@ -171,7 +171,7 @@
   },
   "COINUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1758816000000,
    "gaps": 0,
    "last": 1795017600000,
@@ -180,11 +180,11 @@
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "COINUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1789948800000,
    "gaps": 0,
    "last": 1795118400000,
@@ -193,7 +193,7 @@
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "CRVUSDT_1W": {
    "chain_breaks": 0,
@@ -223,7 +223,7 @@
   },
   "ENAUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1758816000000,
    "gaps": 0,
    "last": 1795017600000,
@@ -232,11 +232,11 @@
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "ENAUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1789948800000,
    "gaps": 0,
    "last": 1795118400000,
@@ -245,7 +245,7 @@
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "ETHUSDT_1D": {
    "chain_breaks": 0,
@@ -288,7 +288,7 @@
   },
   "GOOGLUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1758816000000,
    "gaps": 0,
    "last": 1795017600000,
@@ -297,11 +297,11 @@
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "GOOGLUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1789948800000,
    "gaps": 0,
    "last": 1795118400000,
@@ -310,7 +310,7 @@
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "INJUSDT_1W": {
    "chain_breaks": 0,
@@ -353,7 +353,7 @@
   },
   "MSTRUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1758816000000,
    "gaps": 0,
    "last": 1795017600000,
@@ -362,11 +362,11 @@
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "MSTRUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1789948800000,
    "gaps": 0,
    "last": 1795118400000,
@@ -375,7 +375,7 @@
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "MUUSDT_1D": {
    "chain_breaks": 0,
@@ -431,7 +431,7 @@
   },
   "NEARUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1758816000000,
    "gaps": 0,
    "last": 1795017600000,
@@ -440,7 +440,7 @@
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "NEARUSDT_1W": {
    "chain_breaks": 0,
@@ -457,7 +457,7 @@
   },
   "NEARUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1789948800000,
    "gaps": 0,
    "last": 1795118400000,
@@ -466,11 +466,11 @@
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "NVDAUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1758816000000,
    "gaps": 0,
    "last": 1795017600000,
@@ -479,11 +479,11 @@
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "NVDAUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1789948800000,
    "gaps": 0,
    "last": 1795118400000,
@@ -492,11 +492,11 @@
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "ONDOUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1758816000000,
    "gaps": 0,
    "last": 1795017600000,
@@ -505,11 +505,11 @@
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "ONDOUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1789948800000,
    "gaps": 0,
    "last": 1795118400000,
@@ -518,7 +518,7 @@
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "OPUSDT_1W": {
    "chain_breaks": 0,
@@ -535,7 +535,7 @@
   },
   "PEPEUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1758816000000,
    "gaps": 0,
    "last": 1795017600000,
@@ -544,11 +544,11 @@
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "PEPEUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1789948800000,
    "gaps": 0,
    "last": 1795118400000,
@@ -557,7 +557,7 @@
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "SEIUSDT_1W": {
    "chain_breaks": 0,
@@ -574,7 +574,7 @@
   },
   "SOLUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1758816000000,
    "gaps": 0,
    "last": 1795017600000,
@@ -583,11 +583,11 @@
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "SOLUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1789948800000,
    "gaps": 0,
    "last": 1795118400000,
@@ -596,11 +596,11 @@
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "SUIUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1758816000000,
    "gaps": 0,
    "last": 1795017600000,
@@ -609,7 +609,7 @@
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "SUIUSDT_1W": {
    "chain_breaks": 0,
@@ -626,7 +626,7 @@
   },
   "SUIUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1789948800000,
    "gaps": 0,
    "last": 1795118400000,
@@ -635,11 +635,11 @@
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "TSLAUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1758816000000,
    "gaps": 0,
    "last": 1795017600000,
@@ -648,11 +648,11 @@
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "TSLAUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1789948800000,
    "gaps": 0,
    "last": 1795118400000,
@@ -661,7 +661,7 @@
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "UNIUSDT_1W": {
    "chain_breaks": 0,
@@ -678,7 +678,7 @@
   },
   "XRPUSDT_1D": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1758816000000,
    "gaps": 0,
    "last": 1795017600000,
@@ -687,11 +687,11 @@
    "ok": true,
    "pages": 4,
    "rows": 420,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   },
   "XRPUSDT_4H": {
    "chain_breaks": 0,
-   "checked_at": 1795133133320,
+   "checked_at": 1795143608703,
    "first": 1789948800000,
    "gaps": 0,
    "last": 1795118400000,
@@ -700,9 +700,9 @@
    "ok": true,
    "pages": 1,
    "rows": 360,
-   "written_at": 1795133133320
+   "written_at": 1795143608703
   }
  },
  "note": "ts = 開盤時間（毫秒，UTC）。只含已收盤 K。欄位 ts,open,high,low,close,volume(base)。日線/週線以 UTC+8 00:00 為界。",
- "updated_at": 1795133717284
+ "updated_at": 1795143608703
 }
