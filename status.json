@@ -2,7 +2,7 @@
  "files": {
   "AAVEUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1794813197552,
+   "checked_at": 1795308637318,
    "first": 1746374400000,
    "gaps": 0,
    "last": 1794153600000,
@@ -11,7 +11,7 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1794813197552
+   "written_at": 1795308637318
   },
   "AMDUSDT_1D": {
    "chain_breaks": 0,
@@ -41,7 +41,7 @@
   },
   "APTUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1794813197552,
+   "checked_at": 1795308637318,
    "first": 1746374400000,
    "gaps": 0,
    "last": 1794153600000,
@@ -50,7 +50,7 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1794813197552
+   "written_at": 1795308637318
   },
   "ARBUSDT_1D": {
    "chain_breaks": 0,
@@ -67,7 +67,7 @@
   },
   "ARBUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1794813197552,
+   "checked_at": 1795308637318,
    "first": 1746374400000,
    "gaps": 0,
    "last": 1794153600000,
@@ -76,7 +76,7 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1794813197552
+   "written_at": 1795308637318
   },
   "ARBUSDT_4H": {
    "chain_breaks": 0,
@@ -93,7 +93,7 @@
   },
   "ATOMUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1794813197552,
+   "checked_at": 1795308637318,
    "first": 1746374400000,
    "gaps": 0,
    "last": 1794153600000,
@@ -102,11 +102,11 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1794813197552
+   "written_at": 1795308637318
   },
   "AVAXUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1794813197552,
+   "checked_at": 1795308637318,
    "first": 1746374400000,
    "gaps": 0,
    "last": 1794153600000,
@@ -115,7 +115,7 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1794813197552
+   "written_at": 1795308637318
   },
   "BTCUSDT_1D": {
    "chain_breaks": 0,
@@ -197,7 +197,7 @@
   },
   "CRVUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1794813197552,
+   "checked_at": 1795308637318,
    "first": 1746374400000,
    "gaps": 0,
    "last": 1794153600000,
@@ -206,11 +206,11 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1794813197552
+   "written_at": 1795308637318
   },
   "DOTUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1794813197552,
+   "checked_at": 1795308637318,
    "first": 1746374400000,
    "gaps": 0,
    "last": 1794153600000,
@@ -219,7 +219,7 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1794813197552
+   "written_at": 1795308637318
   },
   "ENAUSDT_1D": {
    "chain_breaks": 0,
@@ -275,7 +275,7 @@
   },
   "FILUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1794813197552,
+   "checked_at": 1795308637318,
    "first": 1746374400000,
    "gaps": 0,
    "last": 1794153600000,
@@ -284,7 +284,7 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1794813197552
+   "written_at": 1795308637318
   },
   "GOOGLUSDT_1D": {
    "chain_breaks": 0,
@@ -314,7 +314,7 @@
   },
   "INJUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1794813197552,
+   "checked_at": 1795308637318,
    "first": 1746374400000,
    "gaps": 0,
    "last": 1794153600000,
@@ -323,11 +323,11 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1794813197552
+   "written_at": 1795308637318
   },
   "LDOUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1794813197552,
+   "checked_at": 1795308637318,
    "first": 1746374400000,
    "gaps": 0,
    "last": 1794153600000,
@@ -336,11 +336,11 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1794813197552
+   "written_at": 1795308637318
   },
   "LTCUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1794813197552,
+   "checked_at": 1795308637318,
    "first": 1746374400000,
    "gaps": 0,
    "last": 1794153600000,
@@ -349,7 +349,7 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1794813197552
+   "written_at": 1795308637318
   },
   "MSTRUSDT_1D": {
    "chain_breaks": 0,
@@ -444,7 +444,7 @@
   },
   "NEARUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1794813197552,
+   "checked_at": 1795308637318,
    "first": 1746374400000,
    "gaps": 0,
    "last": 1794153600000,
@@ -453,7 +453,7 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1794813197552
+   "written_at": 1795308637318
   },
   "NEARUSDT_4H": {
    "chain_breaks": 0,
@@ -522,7 +522,7 @@
   },
   "OPUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1794813197552,
+   "checked_at": 1795308637318,
    "first": 1746374400000,
    "gaps": 0,
    "last": 1794153600000,
@@ -531,7 +531,7 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1794813197552
+   "written_at": 1795308637318
   },
   "PEPEUSDT_1D": {
    "chain_breaks": 0,
@@ -561,7 +561,7 @@
   },
   "SEIUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1794813197552,
+   "checked_at": 1795308637318,
    "first": 1746374400000,
    "gaps": 0,
    "last": 1794153600000,
@@ -570,7 +570,7 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1794813197552
+   "written_at": 1795308637318
   },
   "SOLUSDT_1D": {
    "chain_breaks": 0,
@@ -613,7 +613,7 @@
   },
   "SUIUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1794813197552,
+   "checked_at": 1795308637318,
    "first": 1746374400000,
    "gaps": 0,
    "last": 1794153600000,
@@ -622,7 +622,7 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1794813197552
+   "written_at": 1795308637318
   },
   "SUIUSDT_4H": {
    "chain_breaks": 0,
@@ -665,7 +665,7 @@
   },
   "UNIUSDT_1W": {
    "chain_breaks": 0,
-   "checked_at": 1794813197552,
+   "checked_at": 1795308637318,
    "first": 1746374400000,
    "gaps": 0,
    "last": 1794153600000,
@@ -674,7 +674,7 @@
    "ok": true,
    "pages": 6,
    "rows": 80,
-   "written_at": 1794813197552
+   "written_at": 1795308637318
   },
   "XRPUSDT_1D": {
    "chain_breaks": 0,
@@ -704,5 +704,5 @@
   }
  },
  "note": "ts = 開盤時間（毫秒，UTC）。只含已收盤 K。欄位 ts,open,high,low,close,volume(base)。日線/週線以 UTC+8 00:00 為界。",
- "updated_at": 1795306517999
+ "updated_at": 1795308637318
 }
